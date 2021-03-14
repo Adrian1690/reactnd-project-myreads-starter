@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Book extends Component {
 
@@ -16,7 +17,7 @@ class Book extends Component {
 
         const { book, booksShelf } = this.props
 
-        console.log(book);
+        //console.log(book);
         return <li>
         <div className="book">
           <div className="book-top">
@@ -40,6 +41,12 @@ class Book extends Component {
     }
 }
 
+Book.propTypes = {
+    book: PropTypes.object.isRequired,
+    onUpdateBook: PropTypes.func,
+    onAddBook: PropTypes.func,
+    booksShelf: PropTypes.object
+}
 export default Book;
 
 
